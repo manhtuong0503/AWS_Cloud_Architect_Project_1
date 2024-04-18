@@ -1,0 +1,47 @@
+ubuntu@ip-10-1-10-196:~$ mysql -u admin -p -h database-1-primary.cptmywrcrjg4.us                                                                                                                                                             -east-1.rds.amazonaws.com
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 27
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> Show Databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use udacity
+Database changed
+mysql> CREATE TABLE Persons (
+    ->     PersonID int,
+    ->     LastName varchar(255),
+    ->     FirstName varchar(255),
+    ->     Address varchar(255),
+    ->     City varchar(255)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO Persons VALUES(1, 'Tuong', 'Tran Manh', 'Ninh Kieu', 'Can Tho');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+-----------+---------+
+| PersonID | LastName | FirstName | Address   | City    |
++----------+----------+-----------+-----------+---------+
+|        1 | Tuong    | Tran Manh | Ninh Kieu | Can Tho |
++----------+----------+-----------+-----------+---------+
+1 row in set (0.00 sec)
